@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-ubq&d#vde&4413q8xdbmy5f12ki+0dl17#ijjn8#)mbx_raze3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['williamdevwea.pythonanywhere.com']
+ALLOWED_HOSTS = ['williamdevwea.pythonanywhere.com','localhost']
 
 
 # Application definition
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "home"
 ]
 
 MIDDLEWARE = [
@@ -54,7 +56,7 @@ ROOT_URLCONF = 'devwillback.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [''],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,6 +67,11 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+
+TEMPLATE_DIRS = [
+    os.path.join(BASE_DIR, 'templates/'),
 ]
 
 WSGI_APPLICATION = 'devwillback.wsgi.application'
@@ -115,7 +122,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -124,7 +130,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # default static files settings for PythonAnywhere.
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
-MEDIA_ROOT = '/home/williamdevwea/devwillback/media'
-MEDIA_URL = '/media/'
-STATIC_ROOT = '/home/williamdevwea/devwillback/static'
+
+STATICFILES_DIRS = [BASE_DIR/'static', BASE_DIR / 'home' / 'static']
+STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = '/static/'
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
