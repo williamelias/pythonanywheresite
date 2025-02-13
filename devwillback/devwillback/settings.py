@@ -13,6 +13,11 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+load_dotenv()  # take environment variables from .os.getenv.
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,10 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ubq&d#vde&4413q8xdbmy5f12ki+0dl17#ijjn8#)mbx_raze3'
+SECRET_KEY = os.getenv('SECRET_KEY',default='django-insecure-ubq&d#vde&4413q8xdbmy5f12ki+0dl17#ijjn8#)mbx_raze3')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(os.getenv('DEBUG',default=True))
 
 ALLOWED_HOSTS = ['williamdevwea.pythonanywhere.com','localhost']
 

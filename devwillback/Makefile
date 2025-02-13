@@ -1,3 +1,7 @@
+#TODO fix this
+venv:
+	source .venv/bin/activate
+
 migrate:
 	python3 manage.py migrate
 
@@ -6,3 +10,6 @@ makmigrations:
 
 findstatic:
 	python manage.py findstatic ${path}
+
+start:
+	python3 manage.py runserver
