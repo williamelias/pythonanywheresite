@@ -13,3 +13,9 @@ findstatic:
 
 start:
 	python3 manage.py runserver
+
+static:
+	python3 manage.py collectstatic
+
+clean_git:
+	git rm --cached -r .

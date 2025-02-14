@@ -1,3 +1,4 @@
 *.pyc
 devwillback/staticfiles/*
 __pycache__/
+.env
