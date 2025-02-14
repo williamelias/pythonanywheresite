@@ -1,0 +1,4 @@
+- fix last deploy
+- reduce coupling of templates
+- decoupling view creating one view that make request to other drf view
+    - create pdf download view/request view 

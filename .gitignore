@@ -2,3 +2,4 @@
 devwillback/staticfiles/*
 __pycache__/
 .env
+.venv/*
