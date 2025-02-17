@@ -3,3 +3,7 @@ devwillback/staticfiles/*
 __pycache__/
 .env
 .venv/*
+.local
+.cache
+.ipython
+.virtualenvs
