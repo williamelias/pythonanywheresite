@@ -7,3 +7,10 @@ __pycache__/
 .cache
 .ipython
 .virtualenvs
+.pythonstartup.py
+.profile
+.vimrc
+.gitconfig
+.bashrc
+db.sqlite
+.pytest_cache
